@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <!-- 1ere solution syntaxique : balise <style> dans le <head> -->
+    <!-- Bordures visibles (solid) + fusionnees (collapse) -->
+    <title>CV - Ada Lovelace</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            color: #212121;
+        }
+        h1 {
+            border-bottom: 2px solid #424242;
+            padding-bottom: 8px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        table th,
+        table td {
+            border: 1px solid #424242;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ada Lovelace</h1>
+        <p>Pionniere de la programmation - Comtesse de Lovelace</p>
+    </header>
+
+    <section>
+        <h2>Coordonnees</h2>
+        <ul>
+            <li>Email : ada@analytical-engine.uk</li>
+            <li>Telephone : +44 1815 121815</li>
+            <li>Ville : Londres</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Competences</h2>
+        <!-- Liste non ordonnee -->
+        <ul>
+            <li>Algorithmique</li>
+            <li>Mathematiques appliquees</li>
+            <li>Conception de la machine analytique</li>
+            <li>HTML / CSS</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Langues</h2>
+        <!-- Liste ordonnee -->
+        <ol>
+            <li>Anglais (natif)</li>
+            <li>Francais (courant)</li>
+            <li>Latin (notions)</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Parcours</h2>
+        <!--
+            2eme solution syntaxique : attribut style="..." inline.
+            La cellule la plus en bas a droite du tableau porte la couleur
+            de bordure #424242 via un attribut style sur le <td> concerne.
+        -->
+        <table>
+            <tr>
+                <th>Periode</th>
+                <th>Role</th>
+                <th>Organisation</th>
+            </tr>
+            <tr>
+                <td>1833 - 1842</td>
+                <td>Collaboratrice scientifique</td>
+                <td>Charles Babbage</td>
+            </tr>
+            <tr>
+                <td>1843</td>
+                <td>Auteure du premier algorithme</td>
+                <td style="border-color: #424242;">Notes sur la machine analytique</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Formation</h2>
+        <table>
+            <tr>
+                <th>Annee</th>
+                <th>Diplome</th>
+            </tr>
+            <tr>
+                <td>1830</td>
+                <td>Etudes privees de mathematiques</td>
+            </tr>
+            <tr>
+                <td>1832</td>
+                <td style="border-color: #424242;">Geometrie et analyse avancees</td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

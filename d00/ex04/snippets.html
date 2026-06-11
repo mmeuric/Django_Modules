@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        charset="utf-8" : evite les "caracteres bizarres" de l'alerte,
+        car file4.js contient "Exercice reussi!" encode en UTF-8.
+    -->
+    <meta charset="utf-8">
+    <title>Snippets JS</title>
+</head>
+<body>
+    <!--
+        Chaine d'appels : file2 lance cat() -> whale() (file3)
+        -> unicorn() (file1) -> puffin() (file4) -> alert.
+        Toutes les definitions (file1, file3, file4) doivent etre chargees
+        AVANT file2 qui declenche l'execution. D'ou cet ordre.
+        On se contente d'importer les scripts, sans les modifier ni
+        ajouter de JS dans le HTML.
+    -->
+    <script src="file1.js"></script>
+    <script src="file3.js"></script>
+    <script src="file4.js"></script>
+    <script src="file2.js"></script>
+</body>
+</html>

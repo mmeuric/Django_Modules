@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Formulaire de contact</title>
+</head>
+<body>
+    <h1>Contact</h1>
+
+    <!--
+        Les id ci-dessous correspondent EXACTEMENT a ceux lus par popup.js :
+        firstname, name, phone, age, email,
+        gender_male / gender_female / gender_other, student.
+        popup.js ne doit pas etre modifie.
+    -->
+    <form>
+        <p>
+            <label for="firstname">Firstname :</label>
+            <input type="text" id="firstname" name="firstname">
+        </p>
+        <p>
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name">
+        </p>
+        <p>
+            <label for="age">Age :</label>
+            <input type="number" id="age" name="age">
+        </p>
+        <p>
+            <label for="phone">Phone :</label>
+            <input type="tel" id="phone" name="phone">
+        </p>
+        <p>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email">
+        </p>
+        <p>
+            <label for="student">Student at 42 ?</label>
+            <input type="checkbox" id="student" name="student">
+        </p>
+        <p>
+            Gender :
+            <label><input type="radio" id="gender_male" name="gender" value="Male"> Male</label>
+            <label><input type="radio" id="gender_female" name="gender" value="Female"> Female</label>
+            <label><input type="radio" id="gender_other" name="gender" value="Other"> Other</label>
+        </p>
+        <p>
+            <input type="button" value="Run that sexy Javascript !" onclick="displayFormContents();">
+        </p>
+    </form>
+
+    <!-- Integration du script fourni, sans modification -->
+    <script src="popup.js"></script>
+</body>
+</html>
