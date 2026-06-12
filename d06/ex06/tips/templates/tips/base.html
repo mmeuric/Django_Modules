@@ -1,0 +1,35 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>LifeProTips</title>
+  {% bootstrap_css %}
+  <style>
+    .rep-badge { font-size: 0.8rem; color: #adb5bd; }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'home' %}">🚀 LifeProTips</a>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      {% if user.is_authenticated %}
+        {# Ex06 : affichage du nom + réputation entre parenthèses #}
+        <span class="navbar-text text-white">
+          👤 {{ user.username }}
+          <span class="rep-badge">({{ user.reputation }} pts)</span>
+        </span>
+        <a class="btn btn-outline-light btn-sm" href="{% url 'logout' %}">Déconnexion</a>
+      {% else %}
+        <span class="navbar-text text-white">Hello {{ anon_name }} !</span>
+        <a class="btn btn-outline-light btn-sm" href="{% url 'register' %}">Inscription</a>
+        <a class="btn btn-light btn-sm" href="{% url 'login' %}">Connexion</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+<div class="container">{% block content %}{% endblock %}</div>
+{% bootstrap_javascript %}
+</body>
+</html>

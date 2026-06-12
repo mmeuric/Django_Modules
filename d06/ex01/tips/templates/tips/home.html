@@ -1,0 +1,9 @@
+{% extends 'tips/base.html' %}
+{% block content %}
+<h2>Bienvenue sur LifeProTips !</h2>
+{% if user.is_authenticated %}
+  <p>Vous êtes connecté en tant que <strong>{{ user.username }}</strong>.</p>
+{% else %}
+  <p>Votre nom de session : <strong>{{ anon_name }}</strong> (valable 42 secondes)</p>
+{% endif %}
+{% endblock %}

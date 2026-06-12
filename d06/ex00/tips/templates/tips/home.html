@@ -1,0 +1,22 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>LifeProTips</title>
+  {% bootstrap_css %}
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <span class="navbar-brand">🚀 LifeProTips</span>
+    <span class="navbar-text text-white">Hello {{ anon_name }} !</span>
+  </div>
+</nav>
+<div class="container mt-4">
+  <h2>Bienvenue sur LifeProTips !</h2>
+  <p class="text-muted">Votre nom de session : <strong>{{ anon_name }}</strong> (valable 42 secondes)</p>
+</div>
+{% bootstrap_javascript %}
+</body>
+</html>

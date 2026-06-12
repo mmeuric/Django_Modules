@@ -1,0 +1,53 @@
+{% extends 'tips/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="row"><div class="col-lg-8 offset-lg-2">
+  <h2 class="mb-4">💡 Life Pro Tips</h2>
+
+  {% if user.is_authenticated %}
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h5>Partager un Tip</h5>
+      <form method="post">{% csrf_token %}
+        {% bootstrap_form tip_form %}
+        <button type="submit" class="btn btn-primary">Poster</button>
+      </form>
+    </div>
+  </div>
+  {% else %}
+  <div class="alert alert-info"><a href="{% url 'login' %}">Connectez-vous</a> pour poster un Tip.</div>
+  {% endif %}
+
+  {% for tip in tips %}
+  <div class="card mb-3 shadow-sm" style="border-left: 4px solid #0d6efd;">
+    <div class="card-body">
+      <p class="card-text fs-5">{{ tip.contenu }}</p>
+      <small class="text-muted">✍️ <strong>{{ tip.auteur }}</strong> — {{ tip.date|date:"d/m/Y à H:i" }}</small>
+      <div class="mt-2 d-flex align-items-center gap-2 flex-wrap">
+        {% if user.is_authenticated %}
+          <a href="{% url 'upvote' tip.id %}"
+             class="btn btn-sm {% if user in tip.upvoters.all %}btn-success{% else %}btn-outline-success{% endif %}">
+            ▲ {{ tip.upvote_count }}
+          </a>
+          <a href="{% url 'downvote' tip.id %}"
+             class="btn btn-sm {% if user in tip.downvoters.all %}btn-warning{% else %}btn-outline-warning{% endif %}">
+            ▼ {{ tip.downvote_count }}
+          </a>
+          {# Ex04 : bouton visible uniquement si auteur ou permission delete_tip #}
+          {% if tip.auteur == user or perms.tips.delete_tip %}
+          <a href="{% url 'delete_tip' tip.id %}"
+             class="btn btn-sm btn-outline-danger"
+             onclick="return confirm('Supprimer ce tip ?')">🗑 Supprimer</a>
+          {% endif %}
+        {% else %}
+          <span class="btn btn-sm btn-outline-success disabled">▲ {{ tip.upvote_count }}</span>
+          <span class="btn btn-sm btn-outline-warning disabled">▼ {{ tip.downvote_count }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <div class="alert alert-secondary">Aucun Tip pour l'instant.</div>
+  {% endfor %}
+</div></div>
+{% endblock %}
