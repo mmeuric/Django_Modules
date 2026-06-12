@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex00 : Markdown Cheatsheet.</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; color: #333; }
+        h1 { border-bottom: 3px solid #333; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 30px; border-left: 4px solid #666; padding-left: 10px; }
+        pre, code { background: #eee; padding: 4px 8px; border-radius: 4px; font-family: monospace; }
+        pre { padding: 12px; overflow-x: auto; }
+        table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+        th, td { border: 1px solid #ccc; padding: 6px 12px; text-align: left; }
+        th { background: #ddd; }
+        .example { background: #fff; border: 1px solid #ddd; padding: 10px 15px; border-radius: 4px; margin: 8px 0; }
+        blockquote { border-left: 4px solid #aaa; margin: 0; padding: 5px 15px; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+
+<h1>Ex00 : Markdown Cheatsheet.</h1>
+
+<!-- TITRES -->
+<h2>1. Titres</h2>
+<pre>
+# Titre H1
+## Titre H2
+### Titre H3
+#### Titre H4
+##### Titre H5
+###### Titre H6
+</pre>
+
+<!-- EMPHASE -->
+<h2>2. Emphase / Mise en forme</h2>
+<pre>
+*italique*       ou  _italique_
+**gras**         ou  __gras__
+***gras italique***
+~~texte barré~~
+</pre>
+<div class="example">
+    <em>italique</em> &nbsp; | &nbsp; <strong>gras</strong> &nbsp; | &nbsp; <strong><em>gras italique</em></strong> &nbsp; | &nbsp; <s>barré</s>
+</div>
+
+<!-- LISTES -->
+<h2>3. Listes</h2>
+<pre>
+Liste non ordonnée :
+- Item A
+- Item B
+  - Sous-item B1
+* Item C
+
+Liste ordonnée :
+1. Premier
+2. Deuxième
+3. Troisième
+</pre>
+
+<!-- LIENS -->
+<h2>4. Liens</h2>
+<pre>
+[Texte du lien](https://exemple.com)
+[Lien avec titre](https://exemple.com "Titre au survol")
+[Lien de référence][ref]
+
+[ref]: https://exemple.com
+</pre>
+
+<!-- IMAGES -->
+<h2>5. Images</h2>
+<pre>
+![Texte alternatif](chemin/vers/image.png)
+![Alt](https://exemple.com/img.png "Titre optionnel")
+</pre>
+
+<!-- CODE -->
+<h2>6. Code</h2>
+<pre>
+Code inline : `print("Hello World")`
+
+Bloc de code (avec coloration syntaxique) :
+```python
+def hello(name):
+    print(f"Hello, {name}!")
+```
+
+```bash
+python manage.py runserver
+```
+</pre>
+
+<!-- CITATIONS -->
+<h2>7. Citations (Blockquote)</h2>
+<pre>
+> Ceci est une citation.
+> Elle peut s'étendre sur plusieurs lignes.
+>
+> > Citation imbriquée.
+</pre>
+<div class="example">
+    <blockquote>Ceci est une citation.</blockquote>
+</div>
+
+<!-- TABLEAUX -->
+<h2>8. Tableaux</h2>
+<pre>
+| Colonne 1   | Colonne 2   | Colonne 3   |
+|-------------|:-----------:|------------:|
+| Gauche      | Centré      | Droite      |
+| Texte       | Texte       | Texte       |
+</pre>
+<div class="example">
+    <table>
+        <tr><th>Colonne 1</th><th style="text-align:center">Colonne 2</th><th style="text-align:right">Colonne 3</th></tr>
+        <tr><td>Gauche</td><td style="text-align:center">Centré</td><td style="text-align:right">Droite</td></tr>
+    </table>
+</div>
+
+<!-- SÉPARATEURS -->
+<h2>9. Séparateurs horizontaux</h2>
+<pre>
+---
+***
+___
+</pre>
+<hr>
+
+<!-- LIENS AUTOMATIQUES -->
+<h2>10. Liens automatiques</h2>
+<pre>
+&lt;https://exemple.com&gt;
+&lt;contact@exemple.com&gt;
+</pre>
+
+<!-- ÉCHAPPEMENT -->
+<h2>11. Échappement de caractères spéciaux</h2>
+<pre>
+\*  \**  \_  \`  \#  \[  \]  \(  \)  \!  \-  \.
+</pre>
+
+<!-- CASES À COCHER -->
+<h2>12. Cases à cocher (GitHub Flavored Markdown)</h2>
+<pre>
+- [x] Tâche terminée
+- [ ] Tâche à faire
+- [ ] Autre tâche
+</pre>
+<div class="example">
+    <input type="checkbox" checked disabled> Tâche terminée<br>
+    <input type="checkbox" disabled> Tâche à faire
+</div>
+
+<!-- HTML INLINE -->
+<h2>13. HTML inline</h2>
+<pre>
+Du &lt;strong&gt;HTML&lt;/strong&gt; peut être &lt;em&gt;inséré&lt;/em&gt; directement dans Markdown.
+&lt;br&gt; force un saut de ligne.
+</pre>
+
+<!-- NOTES DE BAS DE PAGE -->
+<h2>14. Notes de bas de page (extensions)</h2>
+<pre>
+Texte avec note[^1].
+
+[^1]: Contenu de la note de bas de page.
+</pre>
+
+<!-- RÉSUMÉ RAPIDE -->
+<h2>15. Résumé rapide — Syntaxe clé</h2>
+<table>
+    <tr><th>Élément</th><th>Syntaxe Markdown</th></tr>
+    <tr><td>Titre H1</td><td><code># Titre</code></td></tr>
+    <tr><td>Titre H2</td><td><code>## Titre</code></td></tr>
+    <tr><td>Gras</td><td><code>**texte**</code></td></tr>
+    <tr><td>Italique</td><td><code>*texte*</code></td></tr>
+    <tr><td>Lien</td><td><code>[texte](url)</code></td></tr>
+    <tr><td>Image</td><td><code>![alt](url)</code></td></tr>
+    <tr><td>Code inline</td><td><code>`code`</code></td></tr>
+    <tr><td>Bloc de code</td><td><code>```langage</code></td></tr>
+    <tr><td>Citation</td><td><code>&gt; texte</code></td></tr>
+    <tr><td>Liste à puces</td><td><code>- item</code></td></tr>
+    <tr><td>Liste numérotée</td><td><code>1. item</code></td></tr>
+    <tr><td>Séparateur</td><td><code>---</code></td></tr>
+    <tr><td>Barré</td><td><code>~~texte~~</code></td></tr>
+</table>
+
+</body>
+</html>

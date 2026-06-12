@@ -1,0 +1,19 @@
+body {
+    color: blue;
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+nav {
+    background: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+h1 { border-bottom: 2px solid currentColor; padding-bottom: 8px; }

@@ -1,0 +1,106 @@
+{% extends "ex01/base.html" %}
+{% load static %}
+
+{% block title %}Ex01 : Moteur de template.{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'ex01/style2.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Moteur de template Django</h1>
+
+<p>
+    Django utilise par défaut le <strong>Django Template Language (DTL)</strong>,
+    un moteur de templates minimaliste et sécurisé qui permet de générer du HTML
+    dynamique à partir de données Python.
+</p>
+
+<h2>1. Les blocs (<code>{% block %}</code>)</h2>
+<p>
+    Les blocs permettent l'<strong>héritage de templates</strong> (principe DRY).
+    Un template parent définit des zones remplaçables avec <code>{% block nom %}...{% endblock %}</code>.
+    Un template enfant peut surcharger ces zones avec <code>{% extends "parent.html" %}</code>
+    et redéfinir les blocs souhaités.
+</p>
+<pre>
+— base.html (parent) —
+&lt;title&gt;{% block title %}Titre par défaut{% endblock %}&lt;/title&gt;
+&lt;body&gt;{% block content %}{% endblock %}&lt;/body&gt;
+
+— page.html (enfant) —
+{% extends "base.html" %}
+{% block title %}Ma Page{% endblock %}
+{% block content %}&lt;p&gt;Contenu spécifique&lt;/p&gt;{% endblock %}
+</pre>
+
+<h2>2. Les boucles <code>{% for ... in %}</code></h2>
+<p>
+    La balise <code>{% for %}</code> itère sur n'importe quel itérable Python
+    passé dans le contexte. Elle expose aussi des variables spéciales comme
+    <code>forloop.counter</code> (compteur 1-indexé) ou <code>forloop.last</code>.
+</p>
+<pre>
+{% for item in liste %}
+    &lt;li&gt;{{ forloop.counter }}. {{ item }}&lt;/li&gt;
+{% empty %}
+    &lt;p&gt;La liste est vide.&lt;/p&gt;
+{% endfor %}
+</pre>
+
+<h2>3. Les structures de contrôle <code>{% if %}</code></h2>
+<p>
+    La balise <code>{% if %}</code> évalue une condition et affiche du contenu
+    conditionnellement. Elle supporte les opérateurs <code>and</code>, <code>or</code>,
+    <code>not</code>, ainsi que les comparaisons (<code>==</code>, <code>!=</code>,
+    <code>&lt;</code>, <code>&gt;</code>, <code>in</code>, <code>not in</code>).
+</p>
+<pre>
+{% if user.is_authenticated %}
+    &lt;p&gt;Bonjour {{ user.username }} !&lt;/p&gt;
+{% elif user.is_staff %}
+    &lt;p&gt;Bonjour administrateur.&lt;/p&gt;
+{% else %}
+    &lt;p&gt;Veuillez vous connecter.&lt;/p&gt;
+{% endif %}
+</pre>
+
+<h2>4. Affichage de variables passées par contexte</h2>
+<p>
+    La vue passe un dictionnaire <code>context</code> à la fonction <code>render()</code>.
+    Dans le template, les variables du contexte sont accessibles avec la syntaxe
+    <code>{{ variable }}</code>. Les attributs et clés de dictionnaire sont accessibles
+    avec la notation pointée : <code>{{ objet.attribut }}</code>.
+</p>
+<pre>
+— views.py —
+def ma_vue(request):
+    context = {
+        'titre': 'Bonjour le monde',
+        'items': ['Python', 'Django', 'HTML'],
+        'user': {'nom': 'Alice'},
+    }
+    return render(request, 'mon_template.html', context)
+
+— mon_template.html —
+&lt;h1&gt;{{ titre }}&lt;/h1&gt;
+&lt;p&gt;Utilisateur : {{ user.nom }}&lt;/p&gt;
+{% for item in items %}
+    &lt;li&gt;{{ item }}&lt;/li&gt;
+{% endfor %}
+</pre>
+
+<h2>5. Filtres de template</h2>
+<p>
+    Les filtres modifient la valeur d'une variable : <code>{{ variable|filtre }}</code>.
+    Exemples courants :
+</p>
+<pre>
+{{ texte|upper }}          → TEXTE EN MAJUSCULES
+{{ texte|lower }}          → texte en minuscules
+{{ texte|truncatechars:50 }} → texte tronqué à 50 caractères
+{{ liste|length }}         → nombre d'éléments
+{{ date|date:"d/m/Y" }}    → formatage de date
+{{ valeur|default:"N/A" }} → valeur par défaut si vide
+</pre>
+{% endblock %}

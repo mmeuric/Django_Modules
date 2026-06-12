@@ -1,0 +1,73 @@
+{% extends "ex01/base.html" %}
+
+{% block title %}Ex01 : Processus d'affichage d'une page statique.{% endblock %}
+
+{% block content %}
+<h1>Processus d'affichage d'une page statique</h1>
+
+<p>
+    Voici le cycle complet de la requête à la réponse pour l'affichage d'une page
+    statique dans Django, à partir d'un simple template.
+</p>
+
+<h2>1. La requête HTTP arrive</h2>
+<p>
+    L'utilisateur saisit une URL dans son navigateur (ex : <code>/ex01/affichage</code>).
+    Le navigateur envoie une requête HTTP GET au serveur Django.
+</p>
+
+<h2>2. Le routeur URL analyse la requête</h2>
+<p>
+    Django consulte le fichier <code>urls.py</code> principal du projet, qui
+    redirige vers les <code>urls.py</code> de chaque application grâce à la fonction
+    <code>include()</code>. Django parcourt les patterns d'URL dans l'ordre et
+    s'arrête au premier qui correspond.
+</p>
+
+<h2>3. La vue est appelée</h2>
+<p>
+    Une fois l'URL reconnue, Django appelle la fonction de vue associée (définie
+    dans <code>views.py</code>). La vue reçoit l'objet <code>HttpRequest</code>
+    en paramètre. Pour une page statique, la vue se contente d'appeler
+    <code>render(request, 'template.html')</code> sans logique supplémentaire.
+</p>
+
+<h2>4. Le moteur de templates compile le template</h2>
+<p>
+    Django localise le fichier HTML dans les dossiers <code>templates/</code>
+    des applications listées dans <code>INSTALLED_APPS</code>. Le moteur de
+    templates charge et compile le fichier. Dans le cas d'une page statique,
+    aucune variable de contexte n'est substituée.
+</p>
+
+<h2>5. La réponse HTTP est retournée</h2>
+<p>
+    La fonction <code>render()</code> retourne un objet <code>HttpResponse</code>
+    contenant le HTML généré avec un code de statut HTTP 200.
+    Django transmet cette réponse au navigateur, qui affiche la page.
+</p>
+
+<h2>Schéma récapitulatif</h2>
+<pre>
+Navigateur
+    │
+    │  GET /ex01/affichage
+    ▼
+Django (urls.py)
+    │
+    │  Pattern reconnu → appel de la vue
+    ▼
+views.py → render(request, 'ex01/affichage.html')
+    │
+    │  Chargement + compilation du template
+    ▼
+Moteur de templates (Django Template Engine)
+    │
+    │  HTML généré
+    ▼
+HttpResponse (status 200)
+    │
+    ▼
+Navigateur affiche la page
+</pre>
+{% endblock %}

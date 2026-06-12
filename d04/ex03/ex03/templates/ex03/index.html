@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03 : Fifty Shades of Bic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+        h1 { margin-bottom: 20px; }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th {
+            height: 40px;
+            width: 80px;
+            background: #333;
+            color: #fff;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        td {
+            height: 40px;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Fifty Shades of Bic</h1>
+
+<table>
+    <thead>
+        <tr>
+            {% for col in columns %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr>
+            {% for color in row %}
+            <td style="background-color: {{ color }};"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

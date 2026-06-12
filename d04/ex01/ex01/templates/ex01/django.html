@@ -1,0 +1,64 @@
+{% extends "ex01/base.html" %}
+
+{% block title %}Ex01 : Django, framework web.{% endblock %}
+
+{% block content %}
+<h1>Django, framework web</h1>
+
+<h2>Qu'est-ce que Django ?</h2>
+<p>
+    Django est un framework web Python de haut niveau qui favorise un développement rapide
+    et une conception propre et pragmatique. Il a été conçu pour aider les développeurs
+    à créer des applications web de façon rapide, avec moins de code à écrire.
+</p>
+<p>
+    Django suit le principe <strong>DRY</strong> (<em>Don't Repeat Yourself</em>) : chaque information
+    ne doit exister qu'en un seul endroit. Il intègre nativement de nombreux outils
+    (ORM, système de templates, gestion des formulaires, authentification, admin, etc.)
+    ce qui en fait un framework dit « batteries included ».
+</p>
+
+<h2>Historique</h2>
+<ul>
+    <li>
+        <strong>2003</strong> — Django est créé par Adrian Holovaty et Simon Willison
+        au sein du journal <em>Lawrence Journal-World</em> (Kansas, États-Unis) pour gérer
+        des sites d'actualité à fort trafic.
+    </li>
+    <li>
+        <strong>Juillet 2005</strong> — Django est publié en open-source sous licence BSD.
+        Le framework est nommé d'après le guitariste de jazz manouche <em>Django Reinhardt</em>.
+    </li>
+    <li>
+        <strong>2008</strong> — Création de la <em>Django Software Foundation</em> (DSF),
+        organisation à but non lucratif chargée de maintenir et promouvoir le projet.
+    </li>
+    <li>
+        <strong>2010</strong> — Django 1.2 introduit le support multi-base de données.
+    </li>
+    <li>
+        <strong>2013</strong> — Django 1.5 ajoute le support partiel de Python 3 ;
+        Django 1.7 (2014) introduit les migrations natives.
+    </li>
+    <li>
+        <strong>2017</strong> — Django 2.0 abandonne le support Python 2 et simplifie
+        la syntaxe des URLs.
+    </li>
+    <li>
+        <strong>2019–aujourd'hui</strong> — Les versions 3.x, 4.x et 5.x apportent
+        le support natif de l'asynchrone (ASGI), des améliorations ORM, et une
+        modernisation continue.
+    </li>
+</ul>
+
+<h2>Architecture MTV</h2>
+<p>
+    Django adopte un patron d'architecture <strong>MTV</strong> (Model – Template – View),
+    proche du MVC classique :
+</p>
+<ul>
+    <li><strong>Model</strong> : définit la structure des données et interagit avec la base via l'ORM.</li>
+    <li><strong>Template</strong> : gère la présentation (HTML) rendue à l'utilisateur.</li>
+    <li><strong>View</strong> : contient la logique métier, reçoit les requêtes HTTP et retourne des réponses.</li>
+</ul>
+{% endblock %}
