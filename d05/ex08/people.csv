@@ -1,0 +1,11 @@
+name,birth_year,gender,eye_color,hair_color,height,mass,homeworld
+Luke Skywalker,19BBY,male,blue,blond,172,77,Tatooine
+C-3PO,112BBY,n/a,yellow,n/a,167,75,Tatooine
+R2-D2,33BBY,n/a,red,n/a,96,32,Naboo
+Darth Vader,41.9BBY,male,yellow,none,202,136,Tatooine
+Leia Organa,19BBY,female,brown,brown,150,49,Alderaan
+Owen Lars,52BBY,male,blue,brown grey,178,120,Tatooine
+Beru Whitesun lars,47BBY,female,blue,brown,165,75,Tatooine
+R5-D4,N/A,n/a,red,n/a,97,32,Tatooine
+Biggs Darklighter,24BBY,male,brown,black,183,84,Tatooine
+Obi-Wan Kenobi,57BBY,male,blue-gray,auburn white,182,77,Stewjon

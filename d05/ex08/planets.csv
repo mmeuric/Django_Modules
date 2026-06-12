@@ -1,0 +1,11 @@
+name,climate,diameter,orbital_period,population,rotation_period,surface_water,terrain
+Tatooine,arid,10465,304,200000,23,1,desert
+Alderaan,temperate,12500,364,2000000000,24,40,grasslands mountains
+Yavin IV,temperate and tropical,10200,4818,1000,24,8,jungle and rainforests
+Hoth,frozen,7200,549,N/A,23,100,tundra ice caves mountain ranges
+Dagobah,murky,8900,341,N/A,23,8,swamp jungles
+Bespin,temperate,118000,5110,6000000,12,0,gas giant
+Endor,forests and mountains,4900,402,30000000,18,8,forests mountains lakes
+Naboo,temperate,12120,312,4500000000,26,12,grassy hills swamps and forests
+Coruscant,temperate,12240,368,1000000000000,24,N/A,cityscape and mountains
+Kamino,temperate,19720,463,1000000000,27,100,ocean

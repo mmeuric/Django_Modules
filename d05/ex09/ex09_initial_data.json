@@ -1,0 +1,13 @@
+[
+  {"model": "ex09.planets", "pk": 1, "fields": {"name": "Rodia", "climate": "hot", "diameter": 7549, "orbital_period": 305, "population": 1300000000, "rotation_period": 29, "surface_water": null, "terrain": "jungles oceans urban areas swamps"}},
+  {"model": "ex09.planets", "pk": 2, "fields": {"name": "Tatooine", "climate": "arid", "diameter": 10465, "orbital_period": 304, "population": 200000, "rotation_period": 23, "surface_water": 1.0, "terrain": "desert"}},
+  {"model": "ex09.planets", "pk": 3, "fields": {"name": "Alderaan", "climate": "temperate", "diameter": 12500, "orbital_period": 364, "population": 2000000000, "rotation_period": 24, "surface_water": 40.0, "terrain": "grasslands mountains"}},
+  {"model": "ex09.planets", "pk": 4, "fields": {"name": "Concord Dawn", "climate": "temperate, arid, windy", "diameter": 10000, "orbital_period": 365, "population": 1500000000, "rotation_period": 24, "surface_water": 15.0, "terrain": "jungles forests deserts plains"}},
+  {"model": "ex09.planets", "pk": 5, "fields": {"name": "Geonosis", "climate": "temperate, arid", "diameter": 11370, "orbital_period": 256, "population": 100000000000, "rotation_period": 30, "surface_water": 5.0, "terrain": "rock arches mountain ranges"}},
+  {"model": "ex09.planets", "pk": 6, "fields": {"name": "Mandalore", "climate": "temperate, arid, windy", "diameter": 9000, "orbital_period": 366, "population": 4000000, "rotation_period": 19, "surface_water": null, "terrain": "savanna forests deserts"}},
+  {"model": "ex09.people", "pk": 1, "fields": {"name": "Greedo", "birth_year": "44BBY", "gender": "male", "eye_color": "black", "hair_color": "n/a", "height": 173, "mass": 74.0, "homeworld": "Rodia"}},
+  {"model": "ex09.people", "pk": 2, "fields": {"name": "Luke Skywalker", "birth_year": "19BBY", "gender": "male", "eye_color": "blue", "hair_color": "blond", "height": 172, "mass": 77.0, "homeworld": "Tatooine"}},
+  {"model": "ex09.people", "pk": 3, "fields": {"name": "Leia Organa", "birth_year": "19BBY", "gender": "female", "eye_color": "brown", "hair_color": "brown", "height": 150, "mass": 49.0, "homeworld": "Alderaan"}},
+  {"model": "ex09.people", "pk": 4, "fields": {"name": "Jango Fett", "birth_year": "66BBY", "gender": "male", "eye_color": "brown", "hair_color": "black", "height": 183, "mass": 79.0, "homeworld": "Concord Dawn"}},
+  {"model": "ex09.people", "pk": 5, "fields": {"name": "Pre Vizsla", "birth_year": "N/A", "gender": "male", "eye_color": "brown", "hair_color": "black", "height": 185, "mass": null, "homeworld": "Mandalore"}}
+]
