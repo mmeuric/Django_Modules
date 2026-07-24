@@ -7,12 +7,6 @@
 <body>
     <h1>Contact</h1>
 
-    <!--
-        Les id ci-dessous correspondent EXACTEMENT a ceux lus par popup.js :
-        firstname, name, phone, age, email,
-        gender_male / gender_female / gender_other, student.
-        popup.js ne doit pas etre modifie.
-    -->
     <form>
         <p>
             <label for="firstname">Firstname :</label>
@@ -23,12 +17,12 @@
             <input type="text" id="name" name="name">
         </p>
         <p>
-            <label for="age">Age :</label>
-            <input type="number" id="age" name="age">
-        </p>
-        <p>
             <label for="phone">Phone :</label>
             <input type="tel" id="phone" name="phone">
+        </p>
+        <p>
+            <label for="age">Age :</label>
+            <input type="number" id="age" name="age">
         </p>
         <p>
             <label for="email">Email :</label>
@@ -49,7 +43,6 @@
         </p>
     </form>
 
-    <!-- Integration du script fourni, sans modification -->
     <script src="popup.js"></script>
 </body>
 </html>
