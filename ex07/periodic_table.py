@@ -57,15 +57,12 @@ def build_html(table):
         '    td { vertical-align: top; min-width: 80px; }',
         '    h4 { margin: 0 0 4px 0; }',
         '    ul { margin: 0; padding-left: 16px; font-size: 0.85em; }',
-        '    h2 { font-weight: normal; color: #444; margin: 0 0 4px 0; }',
-        '    h3 { font-weight: normal; color: #666; margin: 0 0 16px 0; }',
+        '    caption { font-size: 1.5em; font-weight: bold; margin-bottom: 12px; }',
         '  </style>',
         '</head>',
         '<body>',
-        '  <h1>Periodic Table of the Elements</h1>',
-        '  <h2>Mendeleiev standard layout</h2>',
-        '  <h3>7 periods, 18 groups</h3>',
         '  <table>',
+        '    <caption>Periodic Table of the Elements</caption>',
     ]
     for period in sorted(table.keys()):
         html_lines.append('    <tr>')

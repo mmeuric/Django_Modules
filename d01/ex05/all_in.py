@@ -17,13 +17,16 @@ def all_in():
     if len(sys.argv) != 2:
         return
     expressions = sys.argv[1].split(',')
-    # Two successive commas produce an empty element -> display nothing
+    # Two successive commas (nothing between them) -> display nothing at all
     for expr in expressions:
-        if expr.strip() == '':
+        if expr == '':
             return
     for expr in expressions:
         # Normalize multiple spaces
         expr_clean = ' '.join(expr.split())
+        # An expression made only of spaces is skipped
+        if expr_clean == '':
+            continue
         # Case-insensitive search in states
         found_state = None
         for s in states:
@@ -40,7 +43,7 @@ def all_in():
         found_state_name = None
         for code, cap in capital_cities.items():
             if cap.lower() == expr_clean.lower():
-                found_capital = cap  # official casing
+                found_capital = cap
                 for s, c in states.items():
                     if c == code:
                         found_state_name = s

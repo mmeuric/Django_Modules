@@ -10,6 +10,4 @@
 # cut -d ' '  : extrait l'URL (2e champ apres "location: ").
 curl -sI "$1" | grep -i '^location:' | cut -d ' ' -f 2
 
-# Alternative si un retour chariot \r parasite l'affichage et que tr est interdit :
-# curl -sL -o /dev/null -w '%{url_effective}\n' "$1"
-# (resout toute la chaine de redirection et n'imprime que l'URL finale, sans \r)
+
